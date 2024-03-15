@@ -66,7 +66,7 @@ def settings_page():
         temperature = st.slider('Temperature', 0.0, 1.0, get_app_setting('temperature', 0.7), key='temperature')
         top_p = st.slider('Top P', 0.0, 1.0, get_app_setting('top_p', 1.0), key='top_p')
         timeout = st.slider('Time Out', 1, 60, get_app_setting('timeout', 10), key='timeout')
-        system_prompt = st.text_input('System Prompt', get_app_setting('system_prompt', 'You are a hellpful assistant.'), key='system_prompt')
+        system_prompt = st.text_area('System Prompt', get_app_setting('system_prompt', 'You are a hellpful assistant.'), key='system_prompt')
         stream = st.checkbox('Stream', get_app_setting('stream', True), key='stream')
         if st.form_submit_button('Confirm'):
             set_app_setting('model', model)
